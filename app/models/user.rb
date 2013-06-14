@@ -19,8 +19,9 @@
 class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :name, :image, :address, :phone, :age, :gender
   has_secure_password
-  has_many :dogs
+  has_one :dog
   has_many :walks, :through => :dogs
+  has_and_belongs_to_many :discussions
 
   validates :password, :presence => true,
                      :confirmation => true,

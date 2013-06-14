@@ -11,7 +11,23 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130614134820) do
+ActiveRecord::Schema.define(:version => 20130614155714) do
+
+  create_table "comments", :force => true do |t|
+    t.string  "title"
+    t.text    "content"
+    t.integer "user_id"
+  end
+
+  create_table "discussions", :force => true do |t|
+    t.string  "title"
+    t.integer "walk_id"
+  end
+
+  create_table "discussions_users", :id => false, :force => true do |t|
+    t.integer "discussion_id"
+    t.integer "user_id"
+  end
 
   create_table "dogs", :force => true do |t|
     t.string   "name"
@@ -25,13 +41,8 @@ ActiveRecord::Schema.define(:version => 20130614134820) do
     t.datetime "updated_at",  :null => false
   end
 
-  create_table "dogs_walks", :force => true do |t|
+  create_table "dogs_walks", :id => false, :force => true do |t|
     t.integer "dog_id"
-    t.integer "walk_id"
-  end
-
-  create_table "threads", :force => true do |t|
-    t.string  "title"
     t.integer "walk_id"
   end
 

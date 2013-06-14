@@ -17,6 +17,13 @@
 class Dog < ActiveRecord::Base
   attr_accessible :name, :age, :breed, :size, :image, :description
   belongs_to :user
-  has_many :dogs, :through => :walk_dogs
+  has_and_belongs_to_many :walks
   mount_uploader :image, DogImageUploader
+  # validate :dog_limit
+
+  # def dog_limit
+  #   if self.user.dogs.count >= 1
+  #     errors.add(:base, "You may only add 1 dog")
+  #   end
+  # end
 end

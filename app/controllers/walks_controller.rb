@@ -17,7 +17,9 @@ class WalksController < ApplicationController
 
   def update
     @walk = Walk.find(params[:id])
-    @auth.dogs.first.walks << @walk
+    unless @walk.in?(@auth.dogs.first.walks)
+      @auth.dogs.first.walks << @walk
+    end
   end
   def search
     query = params[:query]

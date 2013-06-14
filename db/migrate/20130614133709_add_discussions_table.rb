@@ -1,6 +1,6 @@
-class AddThreadsTable < ActiveRecord::Migration
+class AddDiscussionsTable < ActiveRecord::Migration
   def change
-    create_table :threads do |t|
+    create_table :discussions do |t|
       t.string :title
       t.integer :walk_id
       t.timestamp

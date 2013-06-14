@@ -13,7 +13,8 @@
 
 class Walk < ActiveRecord::Base
   attr_accessible :time, :date, :location, :description, :neighborhood
-  has_many :dogs, :through => :walk_dogs
+  has_and_belongs_to_many :dogs
+  has_many :discussions
 
   before_save:geocode
     def geocode
