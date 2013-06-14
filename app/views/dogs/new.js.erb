@@ -1,3 +1,9 @@
+<% if @auth.dog == nil? %>
 $('#myModal').modal('toggle')
 $('.modal-header h3').html('Add Your Dog')
 $('#reg_form').empty().append('<%=j render(:partial => 'dogform') %>')
+<% else %>
+$('#myModal').modal('toggle')
+$('.modal-header h3').html('Add Your Dog')
+$('#reg_form').empty().append("<h5>Sorry, you may only list a single dog at this time.</h5>")
+<% end %>

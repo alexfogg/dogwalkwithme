@@ -8,7 +8,7 @@ class WalksController < ApplicationController
   end
    def create
     @walk = Walk.create(params[:walk])
-    @auth.dogs.first.walks << @walk
+    @auth.dog.walks << @walk
     redirect_to(walks_path)
   end
   def show
@@ -17,8 +17,8 @@ class WalksController < ApplicationController
 
   def update
     @walk = Walk.find(params[:id])
-    unless @walk.in?(@auth.dogs.first.walks)
-      @auth.dogs.first.walks << @walk
+    unless @walk.in?(@auth.dog.walks)
+      @auth.dog.walks << @walk
     end
   end
   def search

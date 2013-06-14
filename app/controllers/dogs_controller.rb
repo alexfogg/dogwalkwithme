@@ -6,6 +6,6 @@ class DogsController < ApplicationController
 
   def create
     @dog = Dog.create(params[:dog])
-    @auth.dogs << @dog
+    @auth.dog = @dog
   end
 end

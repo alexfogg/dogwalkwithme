@@ -14,7 +14,9 @@
 class Walk < ActiveRecord::Base
   attr_accessible :time, :date, :location, :description, :neighborhood
   has_and_belongs_to_many :dogs
-  has_many :discussions
+  has_one :discussion
+  before_create :build_default_discussion
+
 
   before_save:geocode
     def geocode
@@ -25,4 +27,9 @@ class Walk < ActiveRecord::Base
       self.lng = result.longitude
     end
   end
+
+  private
+    def build_default_discussion
+      self.discussion = Discussion.create(:title => "Walk Discussion")
+    end
 end

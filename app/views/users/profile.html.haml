@@ -24,15 +24,15 @@
 %br
 .row
   .span2.offset4
-    %h2.text-center #{@auth.dogs.first.name}
+    %h2.text-center #{@auth.dog.name}
     %br
 .row
   .span4.offset2
-    #dogimg= image_tag @auth.dogs.first.image
+    #dogimg= image_tag @auth.dog.image
   .span3
     %ul.unstyled#profileinfo
       %br
-      %li Age: #{@auth.dogs.first.age}
-      %li Breed: #{@auth.dogs.first.breed}
-      %li Size: #{@auth.dogs.first.size}
-      %li Description: #{@auth.dogs.first.description}
+      %li Age: #{@auth.dog.age}
+      %li Breed: #{@auth.dog.breed}
+      %li Size: #{@auth.dog.size}
+      %li Description: #{@auth.dog.description}

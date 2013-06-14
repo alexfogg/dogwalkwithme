@@ -9,7 +9,7 @@
 
 class Discussion < ActiveRecord::Base
   belongs_to :walk
-  has_many_and_belongs_to_many :users
+  has_and_belongs_to_many :users
   has_many :comments
   attr_accessible :title, :walk_id
 end
