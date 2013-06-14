@@ -1,0 +1,12 @@
+<% if @auth.present? %>
+// $('#reg_form').append('<h4>You are logged in</h4>');
+// $('#reg_form h4').fadeOut(2000, function(){ $('#reg_form').remove(); });
+$('#myModal').modal('hide')
+$('#nav').empty();
+$('#nav').append('<%=j render :partial => 'layouts/nav' %>');
+// $('#alert_placeholder').html('<div class="alert alert-success" id="main_alert"><a class="close" data-dismiss="alert">×</a><h4>'+'You have logged in successfully.'+'</h4></div>')
+ <% else %>
+$('#reg_form').effect("bounce", 300)
+<% end %>
+
+

@@ -1,0 +1,8 @@
+= form_tag '/login', :remote => true do
+  = label_tag :email
+  = text_field_tag :email, nil, :autofocus => true
+  = label_tag :password
+  = password_field_tag :password
+  %br
+  = link_to('Cancel', '#', :'data-close-form' => true, :class => 'btn btn-danger')
+  = submit_tag 'Enter', :class => 'btn btn-inverse'

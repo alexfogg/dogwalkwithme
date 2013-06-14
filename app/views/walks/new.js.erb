@@ -1,0 +1,20 @@
+$('#myModal').modal('toggle')
+$('.modal-header h3').html('Create a Walk')
+$('#reg_form').empty().append('<%=j render(:partial => 'walkform') %>')
+$(function(){
+  $("#walkformdiv").on("focus", "#walk_date", get_date);
+  $("#walkformdiv").on("focus", "#walk_time", get_time);
+});
+
+
+function get_date(){
+  $("#walk_date").datepicker({ dateFormat: 'yy-mm-dd' });
+}
+
+
+function get_time(){
+  $('#walk_time').timepicker({
+    showPeriod: true,
+    showLeadingZero: true
+  });
+}

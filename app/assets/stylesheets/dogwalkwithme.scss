@@ -1,0 +1,140 @@
+body
+{
+  background: url('dogwalkbg2.jpg');
+  background-size: cover;
+}
+
+// div
+// {
+// background:url(img_flwr.gif);
+// background-repeat:no-repeat;
+// background-size:100% 100%;
+// background-origin:content-box;
+// }
+
+// First import journal variables
+@import "bootswatch/cerulean/variables";
+
+// Then bootstrap itself
+@import "bootstrap";
+
+// Bootstrap body padding for fixed navbar
+body { padding-top: 60px; }
+
+// Responsive styles go here in case you want them
+@import "bootstrap-responsive";
+
+// And finally bootswatch style itself
+@import "bootswatch/cerulean/bootswatch";
+
+body {
+  padding-left: 20px;
+}
+
+#newtitle {
+  text-align: center;
+}
+
+// #dogimg img {
+//   max-height: 160px;
+// }
+
+// #brandnav li {
+//   color: white;
+// }
+
+#container{
+max-width: 1000px;
+max-height: 750px;
+overflow: scroll;
+background-color: #E5E5E5;
+margin: 20px auto;
+padding: 40px 40px;
+-moz-box-shadow: inset 0 0 10px 10px #888;
+-webkit-box-shadow: inset 0 0 10px 10px#888;
+box-shadow: inset 0 0 10px 10px #888;
+border-radius: 40px;
+opacity: 0.9;
+}
+
+#map_canvas {
+  width: 200px;
+  height: 200px;
+  margin-left: 50px;
+}
+
+#mad_canvas {
+  width: 300px;
+  height: 300px;
+}
+#walkinfo a {
+  font-size: 18pt;
+}
+
+#walkneighborhood {
+  font-size: 14pt;
+}
+
+#dogprofileimg img {
+  max-width: 150px;
+  max-height: 150px;
+  border-radius: 100px;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+  -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+  -moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+}
+
+#dogname td {
+  font-size: 15pt;
+}
+
+#userprofileimg img {
+  max-width: 300px;
+  max-height: 300px;
+  border-radius: 250px;
+  -webkit-border-radius: 250px;
+  -moz-border-radius: 250px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+  -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+  -moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+}
+
+#dogimg img {
+  max-width: 300px;
+  max-height: 300px;
+  border-radius: 250px;
+  -webkit-border-radius: 250px;
+  -moz-border-radius: 250px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+  -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+  -moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+}
+
+#profileinfo li {
+  font-size: 16pt;
+}
+
+#walkshow h3 {
+  margin-left: 50px;
+}
+
+#homecontainer {
+  max-width: 900px;
+  max-height: 650px;
+}
+
+// #newuserform{
+// max-width: 300px;
+// max-height: 500px;
+// overflow: scroll;
+// background-color: #E5E5E5;
+// margin: 20px auto;
+// padding: 40px 40px;
+// -moz-box-shadow: inset 0 0 10px 10px #888;
+// -webkit-box-shadow: inset 0 0 10px 10px#888;
+// box-shadow: inset 0 0 10px 10px #888;
+// border-radius: 40px;
+// opacity: 0.9;
+// }

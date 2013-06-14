@@ -1,0 +1,3 @@
+== DogWalkWith.me
+
+Still very-much in progress. Large refactor after final project as GA's Web Dev Immersive Class.

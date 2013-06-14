@@ -1,0 +1,47 @@
+#walkshow
+  .row
+    .span3.offset1
+      %br
+      %br
+      %br
+      #map_canvas
+        %script
+          display_map(40.7275, -73.9858, 11);
+          = "add_marker(#{@walk.lat}, #{@walk.lng});"
+    .span3
+      %h2 Walk Info
+      #walkinfo
+        %h4= @walk.neighborhood
+        %h5= @walk.time.stamp("3:00 AM")
+        %h5= @walk.date.stamp("Sun Aug 5")
+        %p= @walk.description
+        %br
+        = link_to "Join Walk", walk_path(@walk), :method => :put, :remote => true, :class => 'btn btn-primary'
+        %br
+        %br
+        = link_to("All Walks", walks_path, :remote => true, :id => 'allwalksbutton', :class => 'btn btn-danger')
+        %br
+        %br
+        %h3 Dogs
+        %br
+  %ul.unstyled
+    - @walk.dogs.each do |dog|
+      %li
+        .span2.offset1#dogprofileimg
+          = image_tag dog.image
+          %br
+          %br
+          %br
+          %br
+        .span3
+          %ul.unstyled
+            %li
+              %h4= dog.name
+            %li= "Age: #{dog.age}"
+            %li= "Breed: #{dog.breed}"
+            %li= "Size: #{dog.size}"
+            %li= "Description: #{dog.description}"
+      .row
+
+
+

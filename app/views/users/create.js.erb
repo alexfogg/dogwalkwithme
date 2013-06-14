@@ -1,0 +1,9 @@
+<% if @user.valid? %>
+  // $('#reg_form').effect("fold", 1000);
+  $('#myModal').modal('hide')
+  $('#nav').empty();
+  $('#nav').append('<%=j render :partial => 'layouts/nav' %>')
+
+<% else %>
+  $('#reg_form').effect("bounce", 300);
+<% end %>

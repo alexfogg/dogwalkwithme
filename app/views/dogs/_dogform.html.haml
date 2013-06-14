@@ -1,0 +1,15 @@
+= form_for @dog, :html => {:multipart => true} do |f|
+    = f.label :name
+    = f.text_field :name, :autofocus => true
+    = f.label :age
+    = f.number_field  :age
+    = f.label :image
+    = f.file_field :image
+    = f.label :breed
+    = f.text_field :breed
+    = f.label :size
+    = f.text_field :size
+    = f.label :description
+    = f.text_field :description
+    %br
+    = f.submit 'Add Dog', :class => 'btn btn-primary'

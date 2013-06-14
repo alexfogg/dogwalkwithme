@@ -1,0 +1,38 @@
+.row
+  .span2.offset4
+    %h2= @auth.name
+.row
+  .span4.offset2
+    #userprofileimg
+      = image_tag @auth.image
+    / %h2 Map
+    / #map_canvas
+    /   %script
+    /     display_map(40.7316, -73.9901, 11);
+    /     = "add_marker(#{@auth.lat}, #{@auth.lng}, '#{@auth.name}');"
+    / %h3 Add Interview
+    / =link_to('Add Interview', new_interview_path, :class => 'button small radius info')
+
+  .span3
+    %ul.unstyled#profileinfo
+      %br
+      %li Address: #{@auth.address}
+      %li Gender: #{@auth.gender}
+      %li Email: #{@auth.email}
+      %li Age: #{@auth.age}
+      %li Phone: #{@auth.phone}
+%br
+.row
+  .span2.offset4
+    %h2.text-center #{@auth.dogs.first.name}
+    %br
+.row
+  .span4.offset2
+    #dogimg= image_tag @auth.dogs.first.image
+  .span3
+    %ul.unstyled#profileinfo
+      %br
+      %li Age: #{@auth.dogs.first.age}
+      %li Breed: #{@auth.dogs.first.breed}
+      %li Size: #{@auth.dogs.first.size}
+      %li Description: #{@auth.dogs.first.description}

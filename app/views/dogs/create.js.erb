@@ -1,0 +1,7 @@
+<% if @dog.valid? %>
+  $('#myModal').modal('hide')
+  $('#nav').empty();
+  $('#nav').append('<%=j render :partial => 'layouts/nav' %>')
+<% else %>
+  $('#reg_form').effect("bounce", 300);
+<% end %>

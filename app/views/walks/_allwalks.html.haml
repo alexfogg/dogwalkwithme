@@ -1,0 +1,19 @@
+#allwalks
+  .text-center
+    = text_field_tag :searchwalks, nil, :autofocus => true
+    %br
+    %br
+  .span4
+    #mad_canvas
+      %script
+        display_map2(40.7316, -73.9901, 11);
+  .span4#walkinfo
+    %ul.unstyled
+      - @walks.each do |walk|
+        %li
+          %li= link_to("#{walk.dogs.first.name}'s Walk", walk_path(walk), :remote => true)
+          %h4= "#{walk.neighborhood}"
+          %li= "Date: #{walk.date.stamp("Sun Aug 5")}"
+          %li= "Time: #{walk.time.stamp("3:00 AM")}"
+          %li= "Current number of dogs: #{walk.dogs.count}"
+          %br
